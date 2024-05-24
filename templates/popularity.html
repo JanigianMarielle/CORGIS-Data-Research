@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% set active_page = "popularity" %}
+
+{% block title %}Fuel Popularity{% endblock %}
+
+{% block heading %}Fuel Popularity{% endblock %}
+
+{% block body %}
+    <script src="{{url_for('static',filename='canvasChart.js')}}" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            var dataDef = { title: "Popularity by Year",
+                            xLabel: 'Year', 
+                            yLabel: 'Popularity (millions)',
+                            labelFont: '19pt Arial', 
+                            dataPointFont: '10pt Arial',
+                            renderTypes: [CanvasChart.renderType.lines, CanvasChart.renderType.points],
+                            dataPoints: {{ dataPoints }}
+                           };
+            CanvasChart.render('canvas', dataDef);
+        });
+
+    </script>
+	<canvas id="canvas" width="1000" height="600"></canvas>
+{% endblock %}
+
+<p>The following graph displays the data of different fuel sources spanning a couple hundred years.</p>
+<p>Use the navigation tools to further analyze the graph.</p>

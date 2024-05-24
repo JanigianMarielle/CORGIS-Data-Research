@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% set active_page = "environment" %}
+
+{% block title %}Environment and Sustainability{% endblock %}
+
+{% block heading %}Fuel Popularities{% endblock %}
+
+{% block body %}
+<h2>Select a show</h2>
+<form action="/Environment">
+  <select name="year">
+    {{ options }}
+  </select>
+  <br><br>
+  <input type="submit">
+</form>
+{% endblock %}

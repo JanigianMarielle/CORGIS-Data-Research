@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% set active_page = "prices" %}
+
+{% block title %}Fuel Prices{% endblock %}
+
+{% block heading %}Fuel Prices{% endblock %}
+
+{% block body %}
+<h2>Select a show</h2>
+<form action="/prices">
+  <select name="prices">
+    {{ options }}
+  </select>
+  <br><br>
+  <input type="submit">
+</form>
+{% endblock %}

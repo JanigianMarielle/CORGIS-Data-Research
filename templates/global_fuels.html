@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% set active_page = "global_fuels" %}
+
+{% block title %}Where fuels come from{% endblock %}
+
+{% block heading %}Global Fuels{% endblock %}
+
+{% block body %}
+<h2>Select a show</h2>
+<form action="/global fuel">
+  <select name="global">
+    {{ options }}
+  </select>
+  <br><br>
+  <input type="submit">
+</form>
+{% endblock %}
